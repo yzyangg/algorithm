@@ -1,0 +1,27 @@
+ wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
+
+ tar xvJf mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
+
+ mv mysql-8.0.21-linux-glibc2.12-x86_64 mysql-8.0
+
+ mkdir data
+
+ groupadd mysql
+ useradd -g mysql mysql
+
+ chown -R mysql.mysql /root/yanzhengyang/mysql-8.0
+
+ cd bin
+
+ ./mysqld --user=mysql --basedir=/root/yanzhengyang/mysql-8.0 --datadir=/root/yanzhengyang/mysql-8.0/data/ --initialize
+
+
+./mysqld --user=mysql --basedir=/root/yanzhengyang/mysql-8.0 --datadir=/root/yanzhengyang/mysql-8.0/data/ --initialize
+
+
+[mysqld]
+basedir=/root/yanzhengyang/mysql-8.0/
+datadir=/root/yanzhengyang/mysql-8.0/data/
+socket=/tmp/mysql.sock
+character-set-server=UTF8MB4
+symbolic-links=0
